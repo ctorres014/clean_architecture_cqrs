@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagment.Application.Features.Events
+namespace GloboTicket.TicketManagment.Application.Features.Events.Queries.GetEventDetails
 {
     public class GetEventDetailsQueryHandler : IRequestHandler<GetEventDetailsQuery, EventDetailsDto>
     {
