@@ -7,16 +7,22 @@ namespace GloboTicket.TicketManagment.Application.Features.Events.Commands.Creat
 {
     public class CreateEventCommandHandler : IRequestHandler<CreateEventCommand, Guid>
     {
-        private readonly IEventRepository<Event> _eventRepository;
+        private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
 
-        public CreateEventCommandHandler(IEventRepository<Event> eventRepository, IMapper mapper)
+        public CreateEventCommandHandler(IEventRepository eventRepository, IMapper mapper)
         {
             _eventRepository = eventRepository;
             _mapper = mapper;
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
+            var validator = new CreateEventCommandValidator(_eventRepository);
+            var validationResult = await validator.ValidateAsync(request);
+
+            if (validationResult.Errors.Count > 0)
+                throw new Exceptions.ValidationException(validationResult);
+
             var entity = _mapper.Map<Event>(request);
             return await _eventRepository.AddAsync(entity);
         }
