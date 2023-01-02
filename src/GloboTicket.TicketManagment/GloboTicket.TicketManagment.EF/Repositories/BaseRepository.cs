@@ -11,7 +11,7 @@ namespace GloboTicket.TicketManagment.EF.Repositories
 {
     public class BaseRepository<T> : IAsyncRepository<T> where T : class
     {
-        private readonly GloboTicketDbContext _context;
+        protected readonly GloboTicketDbContext _context;
         public BaseRepository(GloboTicketDbContext context) =>
             (_context) = (context);
 

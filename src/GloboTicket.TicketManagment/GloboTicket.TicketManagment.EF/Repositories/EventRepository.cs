@@ -20,7 +20,8 @@ namespace GloboTicket.TicketManagment.EF.Repositories
 
         public Task<bool> IsEventNameAndDateUnique(string name, DateTime date)
         {
-            throw new NotImplementedException();
+            var match = _context.Events.Any(e => e.Name.Equals(name) && e.Date.Equals(date));
+            return Task.FromResult(match);
         }
     }
 }

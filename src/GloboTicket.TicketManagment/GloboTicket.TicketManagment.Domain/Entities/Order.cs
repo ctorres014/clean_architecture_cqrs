@@ -14,5 +14,6 @@ namespace GloboTicket.TicketManagment.Domain.Entities
         public int OrderTotal { get; set; }
         public DateTime OrderPlaced { get; set; }
         public bool OrderPaid { get; set; }
+       
     }
 }
