@@ -8,7 +8,7 @@ namespace GloboTicket.TicketManagment.Application
     {
         public static IServiceCollection AddServiceApplication(this IServiceCollection services)
         {
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             return services;
         }
