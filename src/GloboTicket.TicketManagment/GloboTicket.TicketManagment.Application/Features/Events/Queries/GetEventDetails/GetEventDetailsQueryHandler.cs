@@ -4,7 +4,7 @@ using GloboTicket.TicketManagment.Application.Dtos;
 using GloboTicket.TicketManagment.Domain.Entities;
 using MediatR;
 
-namespace GloboTicket.TicketManagment.Application.Features.Events
+namespace GloboTicket.TicketManagment.Application.Features.Events.Queries.GetEventDetails
 {
     public class GetEventDetailsQueryHandler : IRequestHandler<GetEventDetailsQuery, EventDetailsDto>
     {
@@ -17,10 +17,10 @@ namespace GloboTicket.TicketManagment.Application.Features.Events
 
         public async Task<EventDetailsDto> Handle(GetEventDetailsQuery request, CancellationToken cancellationToken)
         {
-            var @event = await _eventRepository.GetById(request.Id);
+            var @event = await _eventRepository.GetByIdAsync(request.Id);
             var eventDetailsDto = _mapper.Map<EventDetailsDto>(@event);
 
-            var category = await _categoryRepository.GetById(@event.CategoryId);
+            var category = await _categoryRepository.GetByIdAsync(@event.CategoryId);
             eventDetailsDto.Category = _mapper.Map<CategoryDto>(category);
 
             return eventDetailsDto;

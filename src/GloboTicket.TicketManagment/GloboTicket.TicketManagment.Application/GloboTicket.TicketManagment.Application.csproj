@@ -16,4 +16,14 @@
     <ProjectReference Include="..\GloboTicket.TicketManagment.Domain\GloboTicket.TicketManagment.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Categories\Command\" />
+    <Folder Include="Features\Orders\Command\" />
+    <Folder Include="Features\Orders\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Features\Categories\Queries\GetCategoryListWithEvent\GetCategoryListWithEventQuery.cs" />
+  </ItemGroup>
+
 </Project>
