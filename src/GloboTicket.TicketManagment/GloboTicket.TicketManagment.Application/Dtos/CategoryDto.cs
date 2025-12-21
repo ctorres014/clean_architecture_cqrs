@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GloboTicket.TicketManagment.Application.Dtos
+﻿namespace GloboTicket.TicketManagment.Application.Dtos
 {
     public class CategoryDto
     {

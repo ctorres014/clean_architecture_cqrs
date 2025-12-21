@@ -53,3 +53,6 @@ install-package FluentValidation.DependencyInjectionExtensions
 
 **Note:** En la implementacion de una arquitectura CQRS es importante tener en cuenta
 que las clases de validacion se agregar dentro de los commands para mantener un orden.
+
+#Adding EF Core
+
