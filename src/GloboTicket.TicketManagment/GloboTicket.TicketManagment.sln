@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{636F56D1-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalTicket.TicketManagment.DependencyInjection", "GlobalTicket.TicketManagment.DependencyInjection\GlobalTicket.TicketManagment.DependencyInjection.csproj", "{2D0C6725-D1B3-4F55-8109-E76E76B19059}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalTicket.TicketManagment.Persistence", "GlobalTicket.TicketManagment.Persistence\GlobalTicket.TicketManagment.Persistence.csproj", "{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{2D0C6725-D1B3-4F55-8109-E76E76B19059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D0C6725-D1B3-4F55-8109-E76E76B19059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D0C6725-D1B3-4F55-8109-E76E76B19059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{EE133BF2-AA48-4C16-9606-B2FF60CAE31C} = {2DFD71C4-E0BB-4E48-A2E3-F6FC7F01BA15}
 		{636F56D1-556F-40FE-9522-7B20604F375E} = {2DFD71C4-E0BB-4E48-A2E3-F6FC7F01BA15}
 		{2D0C6725-D1B3-4F55-8109-E76E76B19059} = {EE133BF2-AA48-4C16-9606-B2FF60CAE31C}
+		{4E7F5F05-18CA-4AD7-BCFB-CC2D0B6411CB} = {636F56D1-556F-40FE-9522-7B20604F375E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA42AE86-FC24-40C0-B136-78F2861FAAB4}

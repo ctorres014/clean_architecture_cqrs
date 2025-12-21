@@ -19,7 +19,7 @@ namespace GloboTicket.TicketManagment.Application.Features.Events.Commands.Delet
         public async Task<Unit> Handle(DeleteEventCommand request, CancellationToken cancellationToken)
         {
             var eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
-            await _eventRepository.DeleteAsync(eventToDelete.Id);
+            await _eventRepository.DeleteAsync(eventToDelete);
             return Unit.Value;
         }
     }
