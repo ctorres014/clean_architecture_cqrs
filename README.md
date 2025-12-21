@@ -29,4 +29,27 @@ para manejar ese mensaje.
 ### Usando Automapper
 - Instalacion desde nuget package
 - Registracion de DI
-- Creacion del profile para gestionar los tipos que van a ser manejados 
+- Creacion del profile para gestionar los tipos que van a ser manejados
+
+# CQRS Implementation
+Creamos clases que manejan consultas (querys) y comandos que son acciones de escritura.
+Esta patron nos permite en aplicacions grandes:
+	- Separar preocupacion
+	- Escalar funcionalmente
+	- Seguridad
+	- Implementar cambios con poco impacto
+
+#Fluent Validation
+Es un package de codigo abierto que nos permite generar codigo de validacion.
+Utiliza expresiones lambda para definir las reglas de validacion que se aislan de las 
+entidades de negocio.
+**Manejo de Erroes:** Gestion de exceptions generales. Podemos manejarlas o transformarlas
+para el consumidor. Exceptions usadas:
+	- NotFoundException
+	- BadRequestException
+	- ValidationExeption
+install-package FluentValidation
+install-package FluentValidation.DependencyInjectionExtensions
+
+**Note:** En la implementacion de una arquitectura CQRS es importante tener en cuenta
+que las clases de validacion se agregar dentro de los commands para mantener un orden.
