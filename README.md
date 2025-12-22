@@ -56,3 +56,8 @@ que las clases de validacion se agregar dentro de los commands para mantener un 
 
 #Adding EF Core
 
+install-package Microsoft.EntityFrameworkCore.SqlServer
+				Microsoft.Extensions.Options.ConfigurationExtensions
+Implementamos el correspondiente dbcontext, generamos una semilla con informacion
+y realizamos la configuracion (IEntityTypeConfiguration) para las entidades para 
+que nuestro codigo se mantenga limpio.

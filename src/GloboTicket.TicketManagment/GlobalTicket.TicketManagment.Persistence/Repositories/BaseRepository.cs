@@ -6,7 +6,7 @@ namespace GlobalTicket.TicketManagment.Persistence.Repositories
 {
     public class BaseRepository<T> : IAsyncRepository<T> where T : class
     {
-        private readonly GloboTicketDbContext _dbContext;
+        public readonly GloboTicketDbContext _dbContext;
 
         public BaseRepository(GloboTicketDbContext dbContext)
         {
