@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GlobalTicket.TicketManagment.Host\GlobalTicket.TicketManagment.Host.csproj" />
+    <ProjectReference Include="..\GlobalTicket.TicketManagment.Persistence\GlobalTicket.TicketManagment.Persistence.csproj" />
+    <ProjectReference Include="..\GloboTicket.TicketManagment.Application\GloboTicket.TicketManagment.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

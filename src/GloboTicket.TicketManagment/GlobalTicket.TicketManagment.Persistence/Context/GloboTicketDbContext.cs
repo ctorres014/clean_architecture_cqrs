@@ -30,25 +30,33 @@ namespace GlobalTicket.TicketManagment.Persistence.Context
                 modelBuilder.Entity<Category>().HasData(new Category
                 {
                     CategoryId = concertGuid,
-                    Name = "Concerts"
+                    Name = "Concerts",
+                    CreatedBy = "System",
+                    CreateDate = DateTime.Now
                 });
 
                 modelBuilder.Entity<Category>().HasData(new Category
                 {
                     CategoryId = musicalGuid,
-                    Name = "Musicals"
+                    Name = "Musicals",
+                    CreatedBy = "System",
+                    CreateDate = DateTime.Now
                 });
 
                 modelBuilder.Entity<Category>().HasData(new Category
                 {
                     CategoryId = playGuid,
-                    Name = "Plays"
+                    Name = "Plays",
+                    CreatedBy = "System",
+                    CreateDate = DateTime.Now
                 });
 
                 modelBuilder.Entity<Category>().HasData(new Category
                 {
                     CategoryId = conferenceGuid,
-                    Name = "Conferences"
+                    Name = "Conferences",
+                    CreatedBy = "System",
+                    CreateDate = DateTime.Now
                 });
 
             #endregion
@@ -61,7 +69,9 @@ namespace GlobalTicket.TicketManagment.Persistence.Context
                 Date = new DateTime(2025,6, 1),
                 Description = "Join John for his farwell tour across 15 continents. John really needs no introduction since he has already sold over 25 million albums worldwide.",
                 ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/concert1.png",
-                CategoryId = concertGuid
+                CategoryId = concertGuid,
+                CreatedBy = "System",
+                CreateDate = DateTime.Now
             });
 
             modelBuilder.Entity<Event>().HasData(new Event
@@ -73,7 +83,9 @@ namespace GlobalTicket.TicketManagment.Persistence.Context
                 Date = new DateTime(2025, 9, 1),
                 Description = "Michael Johnson doesn't need an introduction either. His 25th album is coming out this fall and we are going to celebrate the launch with a big concert.",
                 ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/concert2.png",
-                CategoryId = concertGuid
+                CategoryId = concertGuid,
+                CreatedBy = "System",
+                CreateDate = DateTime.Now
             });
 
             modelBuilder.Entity<Event>().HasData(new Event
@@ -85,7 +97,9 @@ namespace GlobalTicket.TicketManagment.Persistence.Context
                 Date = new DateTime(2025, 12, 1),
                 Description = "The critics are raving about this new musical production that takes you on an emotional ride through the universe.",
                 ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/musical1.png",
-                CategoryId = musicalGuid
+                CategoryId = musicalGuid,
+                CreatedBy = "System",
+                CreateDate = DateTime.Now
             });
 
 

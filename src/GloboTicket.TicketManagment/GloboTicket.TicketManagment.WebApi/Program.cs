@@ -1,10 +1,11 @@
-using GloboTicket.TicketManagment.Application;
+using GloboTicket.TicketManagment.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddServiceApplication();
+var app = builder
+            .ConfigureServices()
+            .ConfigurePipeLine();
 
-var app = builder.Build();
-
+await app.ResetDatabaseAsync();
 
 app.Run();

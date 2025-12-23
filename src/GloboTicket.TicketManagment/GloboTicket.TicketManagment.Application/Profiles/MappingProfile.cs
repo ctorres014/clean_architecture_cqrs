@@ -15,7 +15,7 @@ namespace GloboTicket.TicketManagment.Application.Profiles
             CreateMap<Category, CategoryDto>().ReverseMap();
 
             CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<Category, CategotyEventDto>().ReverseMap();
+            CreateMap<Category, CategoryEventDto>().ReverseMap();
 
             CreateMap<Event, CreateEventCommand>().ReverseMap();
             CreateMap<Event, UpdateEventCommand>().ReverseMap();

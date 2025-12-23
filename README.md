@@ -39,7 +39,7 @@ Esta patron nos permite en aplicacions grandes:
 	- Seguridad
 	- Implementar cambios con poco impacto
 
-#Fluent Validation
+# Fluent Validation
 Es un package de codigo abierto que nos permite generar codigo de validacion.
 Utiliza expresiones lambda para definir las reglas de validacion que se aislan de las 
 entidades de negocio.
@@ -54,10 +54,31 @@ install-package FluentValidation.DependencyInjectionExtensions
 **Note:** En la implementacion de una arquitectura CQRS es importante tener en cuenta
 que las clases de validacion se agregar dentro de los commands para mantener un orden.
 
-#Adding EF Core
+# Adding EF Core
 
 install-package Microsoft.EntityFrameworkCore.SqlServer
 				Microsoft.Extensions.Options.ConfigurationExtensions
 Implementamos el correspondiente dbcontext, generamos una semilla con informacion
 y realizamos la configuracion (IEntityTypeConfiguration) para las entidades para 
 que nuestro codigo se mantenga limpio.
+
+# Application API
+
+Agregarmos un startupextension class para que nos sirva como contenedor de Gestion
+de servicios, middleware, etc. La idea es descomprimir el contenido de configuracion
+de la clase program.
+
+Crearemos 2 metodos ConfigureServices para gestionar el registro de los servicios
+y ConfigurePipeLine para registrar los middleware.
+
+**Note:** Es importante antes de aplicar la migracion tener el proyecto de api seteado
+como proyecto inicial y agregar el package Microsoft.EntityFrameworkCore.Design
+en el startup proyect y el Microsoft.EntityFrameworkCore.Tools en el que tiene 
+el dbcontext.
+Este paquete es necesario para crear la migracion desde la consola.
+
+### Migrations
+
+Abrimos Packate Manager Console y selecionamos el proyecto de persistencia
+	- Generamos una migracion `add-migration` + el nombre de la migracion
+		ejemplo `add-migration InitialMigration`

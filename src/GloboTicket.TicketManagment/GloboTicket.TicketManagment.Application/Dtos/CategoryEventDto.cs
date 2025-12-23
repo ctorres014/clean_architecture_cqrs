@@ -1,6 +1,6 @@
 ﻿namespace GloboTicket.TicketManagment.Application.Dtos
 {
-    public class CategotyEventDto
+    public class CategoryEventDto
     {
         public Guid EventId { get; set; }
         public string Name { get; set; }

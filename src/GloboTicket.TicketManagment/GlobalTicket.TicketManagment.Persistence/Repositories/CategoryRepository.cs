@@ -12,8 +12,19 @@ namespace GlobalTicket.TicketManagment.Persistence.Repositories
         }
 
         public async Task<List<Category>> GetCategoriesWithEvents(bool includePassedEvents)
-            => await _dbContext.Categories
-                .Include(c => c.Events.Where(e => includePassedEvents || e.Date >= DateTime.Now))
-                .ToListAsync();
+        {
+            if (includePassedEvents) { 
+                return await _dbContext.Categories
+                    .Include(c => c.Events.Where(e => e.Date <= DateTime.Now))
+                    .ToListAsync();
+            }
+
+            return await _dbContext.Categories
+                    .Include(c => c.Events.Where(e => e.Date >= DateTime.Now))
+                    .ToListAsync();
+
+        } 
+        
+        
     }
 }

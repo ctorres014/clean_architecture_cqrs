@@ -5,7 +5,7 @@ using MediatR;
 
 namespace GloboTicket.TicketManagment.Application.Features.Categories.Queries.GetCategoryListWithEvent
 {
-    public class GetCategoryListWithEventHandler : IRequestHandler<GetCategoryListWithEventQuery, List<CategotyEventDto>>
+    public class GetCategoryListWithEventHandler : IRequestHandler<GetCategoryListWithEventQuery, List<CategoryEventDto>>
     {
         private readonly ICategoryRepository _categoryEventRepository;
         private readonly IMapper _mapper;
@@ -16,10 +16,10 @@ namespace GloboTicket.TicketManagment.Application.Features.Categories.Queries.Ge
             _mapper = mapper;
         }
 
-        public async Task<List<CategotyEventDto>> Handle(GetCategoryListWithEventQuery request, CancellationToken cancellationToken)
+        public async Task<List<CategoryEventDto>> Handle(GetCategoryListWithEventQuery request, CancellationToken cancellationToken)
         {
             var categoryEventList = await _categoryEventRepository.GetCategoriesWithEvents(request.IncludeHistory);
-            return _mapper.Map<List<CategotyEventDto>>(categoryEventList);
+            return _mapper.Map<List<CategoryEventDto>>(categoryEventList);
         }
     }
 }
