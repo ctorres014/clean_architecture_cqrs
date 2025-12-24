@@ -82,3 +82,43 @@ Este paquete es necesario para crear la migracion desde la consola.
 Abrimos Packate Manager Console y selecionamos el proyecto de persistencia
 	- Generamos una migracion `add-migration` + el nombre de la migracion
 		ejemplo `add-migration InitialMigration`
+
+### Swagger
+
+Swagger nos permite agregar una description de la API y sus metodos.
+Nos permite generar especificaciones en formato Json o XML.
+Usamos swashbuckle para generar los endpoints de swagger y la documentacion.
+En nuestro proyecto de Api agregamos 2 paquetes
+	- `Swashbuckle.AspNetCore`
+	- `Swashbuckle.AspNetCore.Swagger`
+	
+# Application Test
+
+Podemos escribir distintos tipos de pruebas.
+### Unit Test: 
+Es codigo que de forma automatica invocara al codigo que se va a probar. 
+Verificara una suposicion (assumption) sobre el compotamiento del codigo 
+que se prueba y eso definira si la prueba tiene	exito o no.
+Porque hacemos pruebas unitaria?
+	- Para encontrar bugs
+	- Para asegurar que nuestros cambios no rompan otra seccion de codigo
+	- Mejorar la calidad.
+	- Una bateria de pruebas puede verse como documentacion de codigo.
+### Integration Test
+Las pruebas de integracion, como su nombre lo indica, sob pruebas que 
+se realizan End to End.
+Al crear nuestro codigo de manera independiente de la capa de infraestructura
+no se sealiza el unitetest con lo cual necesitamos probarla.
+Necesitamos probar las interacciones entre las distintas capas.
+Estas pruebas requieren mas trabjo y dedicacion.
+Al probar el sistema como un todo necesitamos acceder a una Bd.
+### Functional Test 
+Se usa para verificar desde el punto de vista del usuario final si el sistema cumple con el comportamiento esperado.
+
+### Setting Up Unit Test
+
+**Test Project:** XUnit
+**Mock Data:** Manual o usando un framework
+**DI**: El codigo se probara en base al Dependency Injection impelementado
+Usaremos Moq para simular las dependencias, shouldly para las assertions y XUnit
+para los unit test.

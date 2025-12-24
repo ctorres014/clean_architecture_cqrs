@@ -14,12 +14,18 @@ namespace GloboTicket.TicketManagment.WebApi
             builder.Services.AddControllers();
             // we could apply configuration cors for front end application
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
             return builder.Build();
         }
 
         public static WebApplication ConfigurePipeLine(this WebApplication app)
         {
             app.UseCors();
+            if(app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }   
             app.UseHttpsRedirection();
             app.MapControllers();
 
