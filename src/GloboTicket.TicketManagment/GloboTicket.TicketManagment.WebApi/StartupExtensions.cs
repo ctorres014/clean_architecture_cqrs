@@ -1,6 +1,7 @@
 ﻿using GlobalTicket.TicketManagment.Persistence;
 using GlobalTicket.TicketManagment.Persistence.Context;
 using GloboTicket.TicketManagment.Application;
+using GloboTicket.TicketManagment.WebApi.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 namespace GloboTicket.TicketManagment.WebApi
@@ -25,7 +26,8 @@ namespace GloboTicket.TicketManagment.WebApi
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }   
+            }
+            app.UseCustomExceptionHandler();
             app.UseHttpsRedirection();
             app.MapControllers();
 
