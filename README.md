@@ -122,3 +122,27 @@ Se usa para verificar desde el punto de vista del usuario final si el sistema cu
 **DI**: El codigo se probara en base al Dependency Injection impelementado
 Usaremos Moq para simular las dependencias, shouldly para las assertions y XUnit
 para los unit test.
+
+# Handling exceptions
+
+1- Custom Exceptions definidas en el proyecto core (application project).
+2- Convertir las exception en mensajes amigables al cliente para que pueda interpretar que paso (middleware in API).
+Mediante el middleware manejaremos las exceptions y las ejecutaremos en orden dentro del pipeline
+de ejecucion de un request o en la response.
+Un componente de middleware es simplemente una clase que debe tener un constructor con un delegate como parametro.
+
+# Logging
+
+Necesitamos habilitar el manejo de log en nuestro servicio para conocer que problemas ocurren:
+1- Configure Logging in program.cs
+2- Podemos log integrado a .net core, `ilogger<T>` en el codigo.
+3- Implementaremos Serilog (configure in program, and appsetting.json)
+La implementacion de serilog nos permite escribir log en fuentes diferentes como un archivo
+o incluso una BD. Tambien nos ofrence una definicion de log estructurado que nos permite
+definir como escribir el log.
+**Note:** Serilog package 
+	- serilog.Aspnetcore
+	- serilog
+	- serilog.extension.Logging
+	- serilog.sinks.file
+	- serilog.settings.configuration
